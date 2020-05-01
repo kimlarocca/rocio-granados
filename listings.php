@@ -10,7 +10,7 @@ function GetSQLValueString($theValue, $theType, $theDefinedValue = "", $theNotDe
     $theValue = get_magic_quotes_gpc() ? stripslashes($theValue) : $theValue;
   }
 
-  $theValue = function_exists("mysql_real_escape_string") ? mysql_real_escape_string($theValue) : mysql_escape_string($theValue);
+  $theValue = function_exists("mysqli_real_escape_string") ? mysqli_real_escape_string($theValue) : mysqli_escape_string($theValue);
 
   switch ($theType) {
     case "text":
@@ -36,17 +36,17 @@ function GetSQLValueString($theValue, $theType, $theDefinedValue = "", $theNotDe
 
 mysqli_select_db($cms, $database_cms);
 $query_Recordset1 = "SELECT * FROM listings  LEFT JOIN (SELECT photoAlbums.albumID,photoAlbums.coverPhotoID,photoAlbums.albumName,photos.id,photos.file_name FROM photoAlbums,photos WHERE photoAlbums.coverPhotoID=photos.id)  AS a ON listings.albumID=a.albumID  WHERE listings.websiteID = ".$websiteID;
-$Recordset1 = mysqli_query($query_Recordset1, $cms) or die(mysqli_error($cms));
+$Recordset1 = mysqli_query($cms, $query_Recordset1) or die(mysqli_error($cms));
 $row_Recordset1 = mysqli_fetch_assoc($Recordset1);
 $totalRows_Recordset1 = mysqli_num_rows($Recordset1);
 
 $query_currentPage = "SELECT * FROM cmsPages WHERE pageID = ".$pageID;
-$currentPage = mysqli_query($query_currentPage, $cms) or die(mysqli_error($cms));
+$currentPage = mysqli_query($cms, $query_currentPage) or die(mysqli_error($cms));
 $row_currentPage = mysqli_fetch_assoc($currentPage);
 $totalRows_currentPage = mysqli_num_rows($currentPage);
 
 $query_websiteInfo = "SELECT * FROM cmsWebsites WHERE websiteID = ".$websiteID;
-$websiteInfo = mysqli_query($query_websiteInfo, $cms) or die(mysqli_error($cms));
+$websiteInfo = mysqli_query($cms, $query_websiteInfo) or die(mysqli_error($cms));
 $row_websiteInfo = mysqli_fetch_assoc($websiteInfo);
 $totalRows_websiteInfo = mysqli_num_rows($websiteInfo);
 ?>
@@ -118,7 +118,7 @@ Beds: <?php echo $row_Recordset1['beds']; ?>, Baths: <?php echo $row_Recordset1[
 		<div class="wf_centered"><a class="button" href="listing-details.php?listingID=<?php echo $row_Recordset1['listingID']; ?>">view details</a></div>
       </div></a>
     </div>
-    <?php } while ($row_Recordset1 = mysql_fetch_assoc($Recordset1)); ?>
+    <?php } while ($row_Recordset1 = mysqli_fetch_assoc($Recordset1)); ?>
   </div>
 <!-- InstanceEndEditable -->
 </div>
@@ -174,9 +174,9 @@ $(document).ready(function() {
 </body>
 <!-- InstanceEnd --></html>
 <?php
-mysql_free_result($Recordset1);
+mysqli_free_result($Recordset1);
 
-mysql_free_result($currentPage);
+mysqli_free_result($currentPage);
 
-mysql_free_result($websiteInfo);
+mysqli_free_result($websiteInfo);
 ?>
