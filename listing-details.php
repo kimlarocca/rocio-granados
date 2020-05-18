@@ -6,31 +6,36 @@ $pageID = -1;
 if (!function_exists("GetSQLValueString")) {
 function GetSQLValueString($theValue, $theType, $theDefinedValue = "", $theNotDefinedValue = "")
 {
-  if (PHP_VERSION < 6) {
-    $theValue = get_magic_quotes_gpc() ? stripslashes($theValue) : $theValue;
-  }
+    if (PHP_VERSION < 6) {
+        $theValue = get_magic_quotes_gpc() ? stripslashes($theValue) : $theValue;
+    }
+    $hostname_cms = "localhost";
+    $database_cms = "kim_4site";
+    $username_cms = "kim_larocca";
+    $password_cms = "Lotus18641864!";
+    $cms = mysqli_connect($hostname_cms, $username_cms, $password_cms, $database_cms) or trigger_error(mysqli_error($cms), E_USER_ERROR);
 
-  $theValue = function_exists("mysqli_real_escape_string") ? mysqli_real_escape_string($theValue) : mysqli_escape_string($theValue);
+    $theValue = mysqli_real_escape_string($cms, $theValue);
 
-  switch ($theType) {
-    case "text":
-      $theValue = ($theValue != "") ? "'" . $theValue . "'" : "NULL";
-      break;
-    case "long":
-    case "int":
-      $theValue = ($theValue != "") ? intval($theValue) : "NULL";
-      break;
-    case "double":
-      $theValue = ($theValue != "") ? doubleval($theValue) : "NULL";
-      break;
-    case "date":
-      $theValue = ($theValue != "") ? "'" . $theValue . "'" : "NULL";
-      break;
-    case "defined":
-      $theValue = ($theValue != "") ? $theDefinedValue : $theNotDefinedValue;
-      break;
-  }
-  return $theValue;
+    switch ($theType) {
+        case "text":
+            $theValue = ($theValue != "") ? "'" . $theValue . "'" : "NULL";
+            break;
+        case "long":
+        case "int":
+            $theValue = ($theValue != "") ? intval($theValue) : "NULL";
+            break;
+        case "double":
+            $theValue = ($theValue != "") ? doubleval($theValue) : "NULL";
+            break;
+        case "date":
+            $theValue = ($theValue != "") ? "'" . $theValue . "'" : "NULL";
+            break;
+        case "defined":
+            $theValue = ($theValue != "") ? $theDefinedValue : $theNotDefinedValue;
+            break;
+    }
+    return $theValue;
 }
 }
 

@@ -3,20 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="222d284e-e2ad-4396-b801-5ad9d126888f" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Templates/template.dwt.php" beforeDir="false" afterPath="$PROJECT_DIR$/Templates/template.dwt.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/about.php" beforeDir="false" afterPath="$PROJECT_DIR$/about.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/art.php" beforeDir="false" afterPath="$PROJECT_DIR$/art.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/contact.php" beforeDir="false" afterPath="$PROJECT_DIR$/contact.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/error_log" beforeDir="false" afterPath="$PROJECT_DIR$/error_log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jewelry.php" beforeDir="false" afterPath="$PROJECT_DIR$/jewelry.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/listing-details.php" beforeDir="false" afterPath="$PROJECT_DIR$/listing-details.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/listings.php" beforeDir="false" afterPath="$PROJECT_DIR$/listings.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/localInfo.php" beforeDir="false" afterPath="$PROJECT_DIR$/localInfo.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/preview.php" beforeDir="false" afterPath="$PROJECT_DIR$/preview.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/search.php" beforeDir="false" afterPath="$PROJECT_DIR$/search.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/template-photoAlbum.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/template.php" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,6 +27,12 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -52,7 +45,10 @@
       <option name="presentableId" value="Default" />
       <updated>1585528230930</updated>
       <workItem from="1585528232306" duration="355000" />
-      <workItem from="1588364321180" duration="255000" />
+      <workItem from="1588364321180" duration="525000" />
+      <workItem from="1588429817309" duration="628000" />
+      <workItem from="1588617760604" duration="5000" />
+      <workItem from="1589814458704" duration="43000" />
     </task>
     <servers />
   </component>
